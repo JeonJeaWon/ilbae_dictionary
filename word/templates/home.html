@@ -1,0 +1,9 @@
+<p1> 일베용어 사전 </p1>
+
+{% for word in words.all %}
+    <dive class = "container">
+        <h1>{{word.title}}</h1>
+        <p>{{word.pub_date}}</p>
+        <p>{{word.summary}}<a href="{% url 'detail' word.id%}">....더보기</a></p>
+    </div>
+{% endfor %}
