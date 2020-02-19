@@ -1,9 +1,17 @@
+<div class='navbar'>
+    <a class='nav-item' href="{% url 'home'%}">Home<span></span></a>
+    <a class='nav-item' href="{% url 'new'%}">글쓰기<span></span></a>
+    <a class='nav-item' href="#">마이페이지<span></span></a>
+</div>
+
 <p1> 일베용어 사전 </p1>
 
 {% for word in words.all %}
     <dive class = "container">
         <h1>{{word.title}}</h1>
-        <p>{{word.pub_date}}</p>
+        <p>{{word.pup_date}}</p>
         <p>{{word.summary}}<a href="{% url 'detail' word.id%}">....더보기</a></p>
+        <p><a href="{% url 'delete' word.id %}"> 삭제</a></p>
+        <p><a href="{% url 'edit' word.id %}"> 수정</a></p>
     </div>
 {% endfor %}
