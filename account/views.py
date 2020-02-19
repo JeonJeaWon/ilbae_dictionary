@@ -22,4 +22,22 @@ def signup(request):
 
 #로그인
 def login(request):
-    return render(request, 'accounts/login.html')
+    if request.method=='POST':
+        username=request.POST['username']
+        password=request.POST['password']
+        user=auth.authenticate(request, username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect('home')
+        else:
+            return render(request,'accounts/login.html',{'error':'username or password is incorrect'})
+    else:
+        return render(request, 'accounts/login.html')
+
+#로그아웃
+def logout(request):
+    if request.method=='POST':
+        auth.logout(request)
+        return redirect('home')
+    return render(request,'accounts/signup.html')
