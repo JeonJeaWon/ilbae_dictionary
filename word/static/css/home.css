@@ -1,0 +1,64 @@
+/* 폰트 적용 */
+@font-face { 
+    font-family: 'Nanum-B';
+    src: local('Nanum-B'), url('../font/NanumSquareB.ttf');
+}
+@font-face { 
+    font-family: 'Nanum-EB';
+    src: local('Nanum-EB'), url('../font/NanumSquareEB.ttf');
+}
+@font-face { 
+    font-family: 'Nanum-L'; 
+    src: local('Nanum-L'), url('../font/NanumSquareL.ttf');
+}
+@font-face { 
+    font-family: 'Nanum-R'; 
+    src: local('Nanum-R'), url('../font/NanumSquareR.ttf');
+}
+
+/* 페이지 공통 */
+body{
+    background-color : #F5F5F2;
+    overflow-x : hidden;
+}
+
+/*navbar*/
+.nav-item{
+    font-family: "Nanum-B";
+    color: #F5F5F2;
+    font-size: 15px;
+    margin: 1% 0.5% 1%;
+}
+
+/* title */
+#title-container{
+    background-color: #54423D;
+}
+#main-title{
+    font-family : 'Nanum-EB';
+    font-size: 40px;
+    color: #F5F5F2;
+    text-align: center; 
+    width:100%;
+    margin: 1% 0% 1%
+}
+#describe{
+    font-family : 'Nanum-B';
+    font-size: 20px;
+    color: #F5F5F2;
+    text-align: center;
+    width:100%;
+    margin: 1% 0% 3%
+}
+
+/*용어*/
+.card{
+    background-color: #f9fafc;
+    margin: 3.7% 4.1% 3.7%;
+    border:0px;
+}
+.title{
+    font-family : 'Nanum-EB';
+    font-size: 20px;
+    text-align: center;
+}
