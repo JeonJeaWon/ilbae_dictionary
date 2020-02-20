@@ -1,0 +1,28 @@
+/* 폰트 적용 */
+@font-face { 
+    font-family: 'Nanum-B'; 
+    src: url('/font/NanumSquareB.ttf'); 
+}
+@font-face { 
+    font-family: 'Nanum-EB'; 
+    src: url('/font/NanumSquareEB.ttf'); 
+}
+@font-face { 
+    font-family: 'Nanum-L'; 
+    src: url('/font/NanumSquareL.ttf'); 
+}
+@font-face { 
+    font-family: 'Nanum-R'; 
+    src: url('/font/NanumSquareR.ttf'); 
+}
+
+/* 페이지 공통 */
+body{
+    background-color : #E0E3DA;
+    overflow-x : hidden;
+}
+
+/* 메인 설명 */
+#describe{
+    font-family : 'Nanum-B';
+}
