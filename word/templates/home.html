@@ -3,8 +3,8 @@
 
     {% if user.is_authenticated %}
         환영합니다. {{user.username}} 님!
-        <a class='nav-item' href="{% url 'new'%}">글쓰기<span></span></a>
-        <a class='nav-item' href="#">마이페이지<span></span></a>
+        <a class='nav-item' href="{% url 'new' %}">글쓰기<span></span></a>
+        <a class='nav-item' href="{% url 'mypage' %}">마이페이지<span></span></a>
         <a class='nav-item' href="javascript:{document.getElementById('logout').submit()}">로그아웃<span></span></a>
         <form id="logout" method="POST" action="{% url 'logout' %}">
             {% csrf_token %}
