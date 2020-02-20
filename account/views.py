@@ -41,3 +41,13 @@ def logout(request):
         auth.logout(request)
         return redirect('home')
     return render(request,'accounts/signup.html')
+
+#마이페이지
+def mypage(request):
+    return render(request,'accounts/mypage.html')
+
+#마이페이지 내 회원탈퇴
+def mem_delete(request):
+    request.user.delete()
+    return redirect('home')
+
