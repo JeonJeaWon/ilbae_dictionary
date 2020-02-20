@@ -1,0 +1,29 @@
+<div class='navbar'>
+    <a class='nav-item' href="{% url 'home'%}">Home<span></span></a>
+
+    {% if user.is_authenticated %}
+        환영합니다. {{user.username}} 님!
+        <a class='nav-item' href="{% url 'new'%}">글쓰기<span></span></a>
+        <a class='nav-item' href="#">마이페이지<span></span></a>
+        <a class='nav-item' href="javascript:{document.getElementById('logout').submit()}">로그아웃<span></span></a>
+        <form id="logout" method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <input type="hidden">
+        </form>
+    {% else %}
+    <a class='nav-item' href="{% url 'signup'%}">회원가입<span></span></a>
+    <a class='nav-item' href="{% url 'login'%}">로그인<span></span></a>
+    {% endif %}
+</div>
+
+<p1> 일베용어 사전 </p1>
+
+{% for word in words.all %}
+    <dive class = "container">
+        <h1>{{word.title}}</h1>
+        <p>{{word.pup_date}}</p>
+        <p>{{word.summary}}<a href="{% url 'detail' word.id%}">....더보기</a></p>
+        <p><a href="{% url 'delete' word.id %}"> 삭제</a></p>
+        <p><a href="{% url 'edit' word.id %}"> 수정</a></p>
+    </div>
+{% endfor %}
