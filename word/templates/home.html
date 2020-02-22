@@ -14,15 +14,14 @@
         <!--CSS-->
         <link rel="stylesheet" href="{% static 'css/home.css' %}">
     </head>
-    <body>
-        
+    <body>   
         <div class="container-fluid" id="title-container">
             <div class="row" id="navbar">
-                <a class='nav-item' href="{% url 'home'%}">Home<span></span></a>
+                <a class='nav-item' href="{% url 'home'%}" style="margin: 1% 0.5% 1% 2%" >Home<span></span></a>
             
                 {% if user.is_authenticated %}
                 환영합니다. {{user.username}} 님!
-                <a class='nav-item' href="{% url 'new' %}">글쓰기<span></span></a>
+                <a class='nav-item' href="{% url 'new' %}" >글쓰기<span></span></a>
                 <a class='nav-item' href="{% url 'mypage' %}">마이페이지<span></span></a>
                 <a class='nav-item' href="javascript:{document.getElementById('logout').submit()}">로그아웃<span></span></a>
                 <form id="logout" method="POST" action="{% url 'logout' %}">

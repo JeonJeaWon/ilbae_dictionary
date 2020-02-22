@@ -22,12 +22,18 @@ body{
     overflow-x : hidden;
 }
 
+a:link,a:active,a:hover,a:visited{
+    text-decoration:none;
+    color: #F5F5F2;
+}
+
 /*navbar*/
 .nav-item{
     font-family: "Nanum-B";
     color: #F5F5F2;
     font-size: 15px;
     margin: 1% 0.5% 1%;
+     
 }
 
 /* title */
