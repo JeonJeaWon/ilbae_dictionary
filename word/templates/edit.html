@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="container">
     <form action="{% url 'update' word.id %}" method="POST">
         {% csrf_token %}
@@ -12,19 +11,4 @@
         <br>
         <input class="btn btn-dark" type="submit" value="제출하기">
     </form>
-=======
-<div class="container">
-    <form action="{% url 'update' word.id %}" method="POST">
-        {% csrf_token %}
-        <h4>제목 : </h4>
-        <input type="text" name="title" value="{{word.title}}">
-        <br>
-        <br>
-        <h4>본문 : </h4>
-        <textarea cols=40 rows=10 name="body">{{word.body}}</textarea>
-        <br>
-        <br>
-        <input class="btn btn-dark" type="submit" value="제출하기">
-    </form>
->>>>>>> a5400f5da7258b5efdc31f13a4595f785cce94b0
 </div>
