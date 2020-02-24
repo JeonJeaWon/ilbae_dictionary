@@ -1,19 +1,47 @@
-<h1>로그인 페이지</h1>
+{% extends "navbar.html" %}
+{% block upcontent %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% if error %}
-{{error}}
-<br>
-<br>
-{% endif%}
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<form action="{% url 'login' %}" method="POST">
-    {% csrf_token %}
-    Username:
-    <input name="username" type="text" value="">
-    <br>
-    Password:
-    <input name="password" type="password" value=""> 
-    <br>
-    <br>
-    <input class="btn btn-primary" type="submit" value="Login">
-</form>
+        <!--CSS-->
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    </head>
+    <body>
+{% endblock %}
+
+{% block downcontent %}
+        <div class="container">
+            <div>
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+                    Username:
+                    <input name="username" type="text" value="">
+                    <br>
+                    Password:
+                    <input name="password" type="password" value="">
+                    <br>
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Login">
+                </form>
+
+                {% if error %}
+                {{error}}
+
+                {% endif%}
+                
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}
+
