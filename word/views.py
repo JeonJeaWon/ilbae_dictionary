@@ -5,7 +5,6 @@ from django.utils import timezone
 
 #기본홈페이지
 def home(request):
-<<<<<<< HEAD
     if request.GET.get('search'):
         result = Word.objects.filter(**{ 'title__contains' : request.GET.get('search')})
         if not result:  #result 리스트가 비었으면
@@ -14,10 +13,7 @@ def home(request):
     else:
         words = Word.objects
         return render(request, 'home.html', {'words' : words, 'check':'check'})
-=======
-    words = Word.objects
-    return render(request, 'home.html', {'words' : words})
->>>>>>> a5400f5da7258b5efdc31f13a4595f785cce94b0
+    
 
 #게시글 조회
 def detail(request, word_id):
@@ -56,7 +52,3 @@ def update(request, word_id):
     word.pup_date =  timezone.datetime.now()
     word.save()
     return redirect('home')
-<<<<<<< HEAD
-
-=======
->>>>>>> a5400f5da7258b5efdc31f13a4595f785cce94b0
