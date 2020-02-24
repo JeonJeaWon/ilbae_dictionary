@@ -1,3 +1,5 @@
+{% extends "navbar.html" %}
+{% block upcontent %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -15,33 +17,9 @@
         <link rel="stylesheet" href="{% static 'css/home.css' %}">
     </head>
     <body>   
-        <div class="container-fluid" id="title-container">
-            <div class="row" id="navbar">
-                <a class='nav-item' href="{% url 'home'%}" style="margin: 1% 0.5% 1% 2%" >Home<span></span></a>
-            
-                {% if user.is_authenticated %}
-                환영합니다. {{user.username}} 님!
-                <a class='nav-item' href="{% url 'new' %}" >글쓰기<span></span></a>
+{% endblock %}
 
-                <a class='nav-item' href="{% url 'mypage' %}">마이페이지<span></span></a>
-                <a class='nav-item' href="javascript:{document.getElementById('logout').submit()}">로그아웃<span></span></a>
-                <form id="logout" method="POST" action="{% url 'logout' %}">
-                    {% csrf_token %}
-                    <input type="hidden">
-                </form>
-                {% else %}
-                <a class='nav-item' href="{% url 'signup'%}">회원가입<span></span></a>
-                <a class='nav-item' href="{% url 'login'%}">로그인<span></span></a>
-                {% endif %}
-            </div>
-            <div class="row">
-                <div id="main-title">일베 용어 사전</div>
-                <div class="w-100"></div>
-                <div id="describe">일베 용어 설명해주는 어저구</div>
-            </div>
-        </div>
-        
-
+{% block downcontent %}
         <div class="container-fluid">
             <div class="row">
                 <form class="search" action="{% url 'home' %}" method="GET">
@@ -79,9 +57,9 @@
                     <div class="title">{{result.title}}</div>
                     <div class="date">{{result.pup_date}}</div>
                     <div class="summary">{{result.summary}}</div>
-                    <div class="link"><a href="{% url 'detail' result.id%}">....더보기</a></div>
-                    <div class="link"><a href="{% url 'delete' result.id %}"> 삭제</a></div>
-                    <div class="link"><a href="{% url 'edit' result.id %}"> 수정</a></div>
+                    <a class="link" href="{% url 'detail' result.id%}">....더보기</a>
+                    <a class="link" href="{% url 'delete' result.id %}"> 삭제</a>
+                    <a class="link" href="{% url 'edit' result.id %}"> 수정</a>
                 </div>
                 {% endfor %}
             </div>
@@ -91,3 +69,4 @@
         
     </body>
 </html>
+{% endblock %}

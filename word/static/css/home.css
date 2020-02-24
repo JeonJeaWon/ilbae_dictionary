@@ -39,7 +39,6 @@ a:hover {text-decoration: none; }
      
 }
 
-/* title */
 #title-container{
     background-color: #00462A;
 }
@@ -58,6 +57,13 @@ a:hover {text-decoration: none; }
     text-align: center;
     width:100%;
     margin: 1% 0% 3%
+}
+
+#user{
+    font-family: "Nanum-B";
+    color: #FFFFFF;
+    font-size: 15px;
+    padding: 1% 1% 0%;
 }
 
 /*용어*/

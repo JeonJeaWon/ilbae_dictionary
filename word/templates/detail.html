@@ -1,8 +1,31 @@
-<h1> detail 페이지 </h1>
+{% extends "navbar.html" %}
+{% block upcontent %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <dive class = "container">
-        <h1>{{word.title}}</h1>
-        <p>{{word.pup_date}}</p>
-        <p>{{word.body}}</p>
-        <a href="{% url 'home' %}">돌아가기</a>
-    </div>
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <!--CSS-->
+        <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    </head>
+    <body>
+{% endblock %}
+
+{% block downcontent %}
+        <div class = "container">
+            <h1>{{word.title}}</h1>
+            <p>{{word.pup_date}}</p>
+            <p>{{word.body}}</p>
+            <a href="{% url 'home' %}">돌아가기</a>
+        </div>
+    </body>
+</html>
+{% endblock %}
