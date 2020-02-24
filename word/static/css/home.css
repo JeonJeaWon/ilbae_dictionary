@@ -63,7 +63,7 @@ a:hover {text-decoration: none; }
     font-family: "Nanum-B";
     color: #FFFFFF;
     font-size: 15px;
-    padding: 1% 1% 0%;
+    margin: 1% 0% 1% 1%;
 }
 
 /*용어*/
@@ -99,4 +99,12 @@ a:hover {text-decoration: none; }
 /*검색창*/
 .search{
     margin: 2% 40% 1% 40%;
+}
+
+/*검색결과 없을 때*/
+#empty{
+    font-family : 'Nanum-EB';
+    font-size: 40px;
+    text-align: center;
+    margin: 10% 35% 10%;
 }

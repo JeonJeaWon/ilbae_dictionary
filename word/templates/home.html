@@ -48,7 +48,11 @@
 
         {% else %}
             {% if empty %}
-                {{empty}}
+                <div class="container-fluid">
+                    <div class="row" id="empty">
+                       {{empty}} 
+                    </div>
+                </div>
             {% else %}
             <div class="container-fluid">
             <div class="row">
