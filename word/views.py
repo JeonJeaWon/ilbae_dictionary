@@ -3,7 +3,11 @@ from .models import Word
 from django.utils import timezone
 # Create your views here.
 
-#기본홈페이지
+#전체 홈페이지
+def main(request):
+    return render(request, 'main.html')
+
+#아카이브 홈페이지
 def home(request):
     if request.GET.get('search'):
         result = Word.objects.filter(**{ 'title__contains' : request.GET.get('search')})
@@ -13,7 +17,10 @@ def home(request):
     else:
         words = Word.objects
         return render(request, 'home.html', {'words' : words, 'check':'check'})
-    
+
+#서비스 소개
+def about(request):
+    return render(request, 'about.html')
 
 #게시글 조회
 def detail(request, word_id):

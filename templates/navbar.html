@@ -1,8 +1,8 @@
 {% block upcontent %}{% endblock %}
 <div class="container-fluid" id="title-container">
     <div class="row" id="navbar">
-        <a class='nav-item' href="{% url 'home'%}" style="margin: 1% 0.5% 1% 2%" >Home<span></span></a>
-    
+        <a class='nav-item' href="{% url 'home'%}" style="margin: 1% 0.5% 1% 2%" >Archive<span></span></a>
+        <a class='nav-item' href="{% url 'about'%}" style="margin: 1% 0.5% 1% 2%" >About<span></span></a>
         {% if user.is_authenticated %}
         <a class='nav-item' href="{% url 'new' %}" >글쓰기<span></span></a>
         <a class='nav-item' href="{% url 'mypage' %}">마이페이지<span></span></a>
@@ -18,9 +18,9 @@
         {% endif %}
     </div>
     <div class="row">
-        <div id="main-title">일베 용어 사전</div>
-        <div class="w-100"></div>
-        <div id="describe">일베 용어 설명해주는 어저구</div>
+        <div id="main-title"><a href="{% url 'main'%}">그뉴레터</a></div>
+        <!--div class="w-100"></div-->
+        <div id="describe">Growth Newsletter</div>
     </div>
 </div>
 {% block downcontent %}

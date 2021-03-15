@@ -21,7 +21,9 @@ import word.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', word.views.home, name="home"),
+    path('main/', word.views.home, name="home"),
+    path('', word.views.main, name="main"),
+    path('about/', word.views.about, name="about"),
     path('word/',include('word.urls')),
     path('account/', include('account.urls')),
 

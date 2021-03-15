@@ -29,26 +29,7 @@
             </div>
         </div>
 
-        <h2>회원탈퇴</h2>
-        <form action="{% url 'mem_delete' %}" method="POST" id="del_form">
-            {% csrf_token %}
-            <input type="button" value="회원탈퇴" onclick="mem_delete()"/>
-        </form>
-        
-        <script type="text/javascript">
-            function mem_delete(){
-                del_form=document.getElementById("del_form")
-                if(confirm("정말로 탈퇴하시겠습니까?")==true){
-                    del_form.submit();
-                }
-                else{
-                    return;
-                }
-            }
-        </script>
-
+ 
     </body>
 </html>
 {% endblock %}
-
-

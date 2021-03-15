@@ -1,0 +1,88 @@
+{% extends "navbar.html" %}
+{% block upcontent %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <!--CSS-->
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        <!--link rel="stylesheet" href="{% static 'css/main.css' %}"-->
+    </head>
+    <body> 
+
+{% endblock %}
+{% block downcontent %}
+        <div class="container-fluid">
+            <div class="row">
+                <form class="search" action="{% url 'home' %}" method="GET">
+                    <input type="text" name="search">
+                    <button class="btn btn-outline-secondary" type="submit">검색</button>
+                </form>
+            </div>
+        </div>
+
+        <!--구독폼-->
+        <div class = "applyform">
+            <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form_style.css">
+	<div id="stb_subscribe">
+		<div class="stb_header">
+			<img src="https://s3.ap-northeast-2.amazonaws.com/img.stibee.com/42630_list_105449_subscriptions_header_image.png?v=1615804998">
+		</div>
+		<form action="https://stibee.com/api/v1.0/lists/Kkr2VCdZ14GB58aq0dDoRbzjKaLSpA==/public/subscribers?groupIds=84929" method="POST" target="_blank" accept-charset="utf-8" class="stb_form" name="stb_subscribe_form" id="stb_subscribe_form" novalidate="">
+			<h1 class="stb_form_title">FrogGii 구독하기</h1>
+			<p class="stb_form_description">FrogGii 구독해주세요!</p>
+			<fieldset class="stb_form_set">
+				<label for="stb_email" class="stb_form_set_label">이메일 주소</label>
+				<input type="email" class="stb_form_set_input" id="stb_email" name="email">
+
+				<div class="stb_form_msg_error" id="stb_email_error"></div>
+			</fieldset><fieldset class="stb_form_set">
+				<label for="stb_name" class="stb_form_set_label">닉네임</label>
+				
+				<input type="text" class="stb_form_set_input" id="stb_name" name="name">
+				<div class="stb_form_msg_error" id="stb_name_error"></div>
+			</fieldset>
+
+			<div class="stb_form_policy">
+				<label>
+					<input type="checkbox" id="stb_policy" value="stb_policy_true">
+					<button id="stb_form_modal_open" data-modal="stb_form_policy_modal" class="stb_form_modal_open_btn" type="button">개인정보 수집 및 이용</button>에 동의합니다.
+				</label>
+				<div class="stb_form_msg_error" id="stb_policy_error"></div>
+				<div class="stb_form_modal stb_form_policy_text blind" id="stb_form_policy_modal">
+					<div class="stb_form_modal_body">
+						<h1 class="stb_form_modal_title">개인정보 수집 및 이용</h1>
+						<p class="stb_form_modal_text">
+							뉴스레터 발송을 위한 최소한의 개인정보를 수집하고 이용합니다.
+                        수집된 정보는 발송 외 다른 목적으로 이용되지 않으며, 서비스가 종료되거나 구독을 해지할 경우 즉시 파기됩니다.
+						</p>
+						<div class="stb_form_modal_btn">
+							<button id="stb_form_modal_close" class="stb_form_modal_close_btn" data-modal="stb_form_policy_modal" type="button">닫기</button>
+						</div>
+					</div>
+					<div class="stb_form_modal_bg" id="stb_form_modal_bg"></div>
+				</div>
+			</div>
+			
+			<div class="stb_form_result" id="stb_form_result"></div>
+
+			<fieldset class="stb_form_set_submit">
+				<button type="submit" class="stb_form_submit_button" id="stb_form_submit_button" style="background-color: rgb(207, 240, 218); color: rgb(58, 197, 105);">구독하기</button>
+			</fieldset>
+			</form>
+		</div>
+	<script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script><script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form.js"></script>
+        
+        </div>
+    </body>
+</html>
+{% endblock %}
